@@ -81,20 +81,3 @@ The Prediction Modeling phase, detailed in `StockMarketPredictor.ipynb`, will us
 3. Commit your changes (`git commit -m 'Add some feature'`).
 4. Push to the branch (`git push origin feature-branch-name`).
 5. Create a Pull Request.
-
-### **Problem Fix Report: Jupyter Kernel Issue in VSCode**
-
-**Issue:**
-- Kernel failed to start in VSCode: `/bin/python3.10: No module named ipykernel_launcher...`
-- `ModuleNotFoundError` for `yfinance`.
-
-**Cause:**
-- Incorrect Python interpreter in VSCode.
-- Missing or misconfigured `ipykernel`.
-
-**Resolution:**
-1. Activated virtual environment: `source stock_predictor_env/bin/activate`
-2. Installed `ipykernel`: `pip install ipykernel`
-3. Registered the environment as a Jupyter kernel:
-   ```bash
-   python -m ipykernel install --user --name=stock_predictor_env --display-name "Python (stock_predictor_env)"
