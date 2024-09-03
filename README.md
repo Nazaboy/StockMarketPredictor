@@ -2,48 +2,49 @@
 
 ## **Overview**
 
-This project focuses on predicting the S&P 500 index using a machine learning approach, specifically utilizing a Random Forest model. The entire process is conducted within a Jupyter notebook, which facilitates easy visualization of the workflow and results.
+This project is divided into two main parts: **Exploratory Data Analysis (EDA)** and **Prediction Modeling**. The goal is to understand the historical behavior of the S&P 500 index through EDA and then apply machine learning techniques to predict its future movements. This README focuses on the EDA component, with the Prediction Modeling documentation to be added soon.
 
-## **Features**
+## **Project Structure**
 
-- **Data Sourcing**: Automatically downloads historical S&P 500 data from Yahoo Finance.
-- **Data Cleaning**: Prepares and cleans the dataset to ensure accuracy and usability for analysis.
-- **Exploratory Data Analysis (EDA)**: Provides deep insights into the dataset through various visualizations.
-- **Model Training**: Implements a Random Forest model to predict stock price movements.
-- **Backtesting**: Evaluates the model's accuracy using historical data to ensure reliability.
-- **Enhanced Predictions**: Integrates advanced features like rolling averages and Bollinger Bands to improve prediction accuracy.
+- `README.md`: Project documentation.
+- `requirements.txt`: List of dependencies needed to run the project.
+- `StockMarketEDA.ipynb`: Jupyter notebook containing the Exploratory Data Analysis of the S&P 500 data.
+- `StockMarketPredictor.ipynb`: Jupyter notebook for the Prediction Modeling (final and documentation coming soon).
+- `stock_predictor_env/`: Virtual environment directory.
 
 ## **Exploratory Data Analysis (EDA)**
 
-EDA is a crucial step in this project, helping to understand the data and prepare it for the modeling process. Below are the key visualizations and their insights:
+### **Purpose**
+The EDA phase helps us uncover key patterns, trends, and insights from the S&P 500 data, which are essential for building a robust predictive model.
 
-1. **S&P 500 Closing Prices Over Time**:
-   - Shows a clear long-term upward trend, with notable accelerations from the 1980s onwards. Occasional dips represent market corrections or economic downturns.
+### **Key Insights**
 
-2. **Distribution of S&P 500 Closing Prices**:
-   - The distribution is heavily left-skewed, reflecting the market's historically lower levels. Higher prices have become more common only in recent years.
+1. **Time Series Analysis of Closing Prices**:
+   - Long-term upward trends, with notable growth acceleration from the 1980s onwards.
+   - Identification of major downturns like the 2000 dot-com bubble and the 2008 financial crisis.
 
-3. **S&P 500 Volume Traded Over Time**:
-   - Trading volume remained low until the late 1980s, after which it increased significantly. Spikes in volume often correspond to periods of high market activity.
+2. **Distribution Analysis**:
+   - The distribution shows a left-skew, reflecting the historical growth of the market with higher price levels becoming more frequent in recent decades.
 
-4. **S&P 500 Rolling Mean and Standard Deviation**:
-   - The 100-day rolling mean smooths out short-term fluctuations, revealing longer-term trends. The rolling standard deviation indicates periods of high volatility, often during market corrections.
+3. **Volume Trend Analysis**:
+   - Significant increase in trading volume starting in the late 1980s, often correlating with major market events.
 
-5. **Distribution of S&P 500 Daily Returns**:
-   - Daily returns are centered around 0%, with a slight positive skew, indicating the market generally gains more than it loses. The presence of fat tails highlights the risk of extreme market movements.
+4. **Rolling Mean and Standard Deviation**:
+   - Rolling mean reveals long-term trends, while rolling standard deviation indicates periods of market volatility.
 
-6. **S&P 500 Cumulative Returns Over Time**:
-   - Demonstrates the exponential growth of an investment in the S&P 500, underscoring the power of long-term investments and compound growth.
+5. **Daily Returns and Risk Analysis**:
+   - Analysis of daily returns shows the market’s tendency to gain more often than it loses, with occasional extreme movements indicating higher risk.
 
-7. **S&P 500 with Bollinger Bands**:
-   - Visualizes market volatility with bands expanding during high volatility and contracting during stability. Prices near the upper band may indicate overbought conditions, while prices near the lower band suggest oversold conditions.
+6. **Cumulative Returns**:
+   - Illustrates the exponential growth of long-term investments in the S&P 500.
 
-8. **Autocorrelation of S&P 500 Closing Prices**:
-   - The autocorrelation plot shows how past values of the S&P 500 closing price influence future values, with autocorrelation decreasing over time. Periodic dips and peaks may indicate cycles or seasonality.
+7. **Bollinger Bands for Volatility Analysis**:
+   - Bollinger Bands help in identifying overbought and oversold market conditions, providing potential trading signals.
 
-## **Installation**
+8. **Autocorrelation Analysis**:
+   - Highlights patterns and cycles in the market, valuable for predictive modeling.
 
-To set up the project locally:
+### **How to Run EDA**
 
 1. **Clone the Repository**:
     ```bash
@@ -51,10 +52,10 @@ To set up the project locally:
     cd StockMarketPredictor
     ```
 
-2. **Create a Virtual Environment**:
+2. **Set Up a Virtual Environment**:
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    python -m venv stock_predictor_env
+    source stock_predictor_env/bin/activate  # On Windows: stock_predictor_env\Scripts\activate
     ```
 
 3. **Install Dependencies**:
@@ -62,27 +63,16 @@ To set up the project locally:
     pip install -r requirements.txt
     ```
 
-4. **Run the Jupyter Notebook**:
+4. **Run the EDA Notebook**:
     Start the Jupyter notebook server:
     ```bash
     jupyter notebook
     ```
-    Open the `StockMarketPredictor.ipynb` file to run the analysis.
+    Open the `StockMarketEDA.ipynb` file to explore the data and insights.
 
-## **Project Structure**
+## **Prediction Modeling (Coming Soon)**
 
-- `README.md`: Project documentation.
-- `requirements.txt`: List of dependencies.
-- `StockMarketPredictor.ipynb`: The main Jupyter notebook containing the analysis and model.
-- `venv/`: The virtual environment directory (not included in the repository; generated locally).
-
-## **Usage**
-
-1. **Download Data**: The notebook automatically fetches the latest S&P 500 data.
-2. **EDA**: Explore the data with visualizations to understand trends, volatility, and patterns.
-3. **Train Model**: The Random Forest model is trained within the notebook.
-4. **Backtest**: Evaluate the model's predictions with historical data to assess accuracy.
-5. **Predict**: Use the trained model to make future predictions based on new data.
+The Prediction Modeling phase, detailed in `StockMarketPredictor.ipynb`, will use the insights gained from EDA to train and test a machine learning model. Documentation for this phase will be added soon.
 
 ## **Contributing**
 
