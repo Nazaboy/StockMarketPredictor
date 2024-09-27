@@ -2,14 +2,14 @@
 
 ## **Overview**
 
-This project is divided into two main parts: **Exploratory Data Analysis (EDA)** and **Prediction Modeling**. The goal is to understand the historical behavior of the S&P 500 index through EDA and then apply machine learning techniques to predict its future movements. This README focuses on the EDA component, with the Prediction Modeling documentation to be added soon.
+This project is divided into two main parts: **Exploratory Data Analysis (EDA)** and **Prediction Modeling**. The goal is to understand the historical behavior of the S&P 500 index through EDA and then apply machine learning techniques to predict its future movements.
 
 ## **Project Structure**
 
 - `README.md`: Project documentation.
 - `requirements.txt`: List of dependencies needed to run the project.
 - `StockMarketEDA.ipynb`: Jupyter notebook containing the Exploratory Data Analysis of the S&P 500 data.
-- `StockMarketPredictor.ipynb`: Jupyter notebook for the Prediction Modeling (final and documentation coming soon).
+- `StockMarketPredictor.ipynb`: Jupyter notebook for the Prediction Modeling.
 - `stock_predictor_env/`: Virtual environment directory.
 
 ## **Exploratory Data Analysis (EDA)**
@@ -70,9 +70,37 @@ The EDA phase helps us uncover key patterns, trends, and insights from the S&P 5
     ```
     Open the `StockMarketEDA.ipynb` file to explore the data and insights.
 
-## **Prediction Modeling (Coming Soon)**
+## **Prediction Modeling**
 
-The Prediction Modeling phase, detailed in `StockMarketPredictor.ipynb`, will use the insights gained from EDA to train and test a machine learning model. Documentation for this phase will be added soon.
+### **Purpose**
+The Prediction Modeling phase builds on the insights gained from the EDA phase to develop machine learning models capable of predicting whether the S&P 500 will move up or down on the next day.
+
+### **Key Steps in Prediction Modeling**
+
+1. **Feature Engineering**:
+   - We create features such as **RSI**, **MACD**, **Moving Averages**, and other technical indicators to help the model learn the patterns in stock price movements.
+
+2. **Machine Learning Models**:
+   - We train several models, including:
+     - **HistGradientBoostingClassifier**
+     - **RandomForestClassifier**
+     - **LogisticRegression**
+     - **Support Vector Classifier (SVC)**
+
+3. **Model Tuning and Comparison**:
+   - The models are evaluated based on accuracy, precision, recall, and F1-score.
+   - The best-performing model is selected after hyperparameter tuning using **GridSearchCV**.
+
+4. **Evaluation**:
+   - The best model is evaluated on unseen test data, with detailed metrics including confusion matrix, precision, recall, and F1-score.
+
+### **How to Run the Prediction Model**
+
+1. **Open the Prediction Notebook**:
+    Open the `StockMarketPredictor.ipynb` file to view the prediction model steps and outputs.
+
+2. **Run the Notebook**:
+    Run each cell step-by-step to train and evaluate the machine learning models on the S&P 500 data.
 
 ## **Contributing**
 
